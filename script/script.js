@@ -1,10 +1,10 @@
-// declare colors
+// declare value of RGB
 let r = 0;
 let g = 0;
 let b = 0;
 
-// get event and change color
-document.body.addEventListener('keydown', function (e) {
+// change transition color
+const changeColor = (e) => {
     let color = `rgb(${r}, ${g}, ${b})`;
     if (e.code === 'ArrowUp') {
         r += 5;
@@ -22,7 +22,9 @@ document.body.addEventListener('keydown', function (e) {
         if ( r === g === b <= 0){
             r = g = b = 0;
         }
-
     }
     document.body.style.backgroundColor = color;
-});
+};
+
+// get event and change color
+document.body.addEventListener('keydown', changeColor);
